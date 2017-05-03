@@ -1,0 +1,54 @@
+<style type="text/css">
+	body{
+		color:grey;
+	}
+	a{
+		font-family:Arial;
+		line-height:2em;
+		font-size:12px;
+		color:#727272;
+		text-decoration:none;
+	}
+	a:hover{
+		text-decoration:underline;
+	}
+	.omg{
+		font-weight:bold;
+		font-size:14px;
+		color:white;
+	}
+	th a:hover{
+		text-decoration:none;
+	}
+	th a:hover{
+		color:#b9f605;
+	}
+	.lab{
+		font-size:14px;
+		color:#fdb306;
+	}
+	p{
+		font-size:12px;
+		font-family:Arial;
+		line-height:2em;
+		color:grey;
+	}	
+	.miss{
+		font-size:14px;
+	}
+	.miss:hover{
+		text-decoration:none;
+	}
+	.miss:hover{
+		color:#b9f605;
+	}
+	ul.small{
+		list-style-type: none;
+	}
+	body{
+		background-repeat: no-repeat;
+	}
+	.white{
+		color: white;
+	}
+</style>
