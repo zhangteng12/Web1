@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		var getImg=document.getElementsByTagName("img"); 
+		var spans=document.getElementsByTagName("span");
+		var flag=5;
+	onload=function(){
+	　　for(var i=0;i<spans.length;i++){
+	　　　　spans[i].onmouseover=function starPic(){
+	　　　　　　var id=parseInt(this.id);
+	　　　　　　for(var i=0;i<=id;i++){
+	　　　　　　　　getImg.item(i).src="star2.png";
+	　　　　　　}
+	　　　　　　for(var j=id+1;j<5;j++){
+	　　　　　　　　getImg.item(i).src="star0.png";
+	　　　　　　}
+	　　　　};
+	　　}
+	　　for(var i=0;i<spans.length;i++){
+	　　　　spans[i].onclick=function qd(){
+	　　　　　　var id=parseInt(this.id);
+	　　　　　　flag=id;
+	　　　　　　for(var i=0;i<=id;i++){
+	　　　　　　　　getImg.item(i).src="star2.png";
+	　　　　　　}
+	　　　　};
+	　　}
+	　　document.getElementById("div").onmouseout=function hide(){
+	　　　　if(flag>=2 && flag<=4){
+	　　　　　　for(var i=0;i<=flag;i++){
+	　　　　　　　　getImg.item(i).src="star2.png";
+	　　　　　　}
+	　　　　　　for(var j=flag+1;j<5;j++){
+	　　　　　　　　getImg.item(i).src="star0.png";
+	　　　　　}
+	　　}
+			else if(flag>=0 && flag<=1){
+	　　　　　　for(var i=0;i<=flag;i++){
+	　　　　　　　　getImg.item(i).src="star1.png";
+	　　　　　　}
+	　　　　　　for(var j=flag+1;j<5;j++){
+	　　　　　　　　getImg.item(i).src="star0.png";
+	　　　　　}
+	　　}
+	　　　　else{
+	　　　　　　for(var i=0;i<spans.length;i++){
+	　　　　　　　　getImg.item(i).src="star0.png";
+	　　　　　　}
+	　　　　}
+	　　};
+	};
+	</script>
+
+	<div id="div">
+	<span id="0">
+		<img src="star0.png">
+	</span>
+	<span id="1">
+		<img src="star0.png">
+	</span>
+	<span id="2">
+		<img src="star0.png">
+	</span>
+	<span id="3">
+		<img src="star0.png">
+	</span>
+	<span id="4">
+		<img src="star0.png">
+	</span>
+	</div>
+	<div width="500px" height="300px">
+		<input type="" name="text" id="
+		text">
+	</div>
+	
+	<div>
+		<select>
+			<option>公开评论</option>
+			<option>匿名评论</option>
+		</select>
+	</div>
+
+</body>
+</html>
