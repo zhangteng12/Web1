@@ -1,61 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>图片自动滚动</title>
-	<style type="text/css">
-		#picScroll{
-		overflow:hidden;
-		width: 600px;
-		white-space: nowrap;
-	}
-	img{
-		height: 250px;
-	}
-	#picScroll1 {
-		float: left;
-	}
-	#picScroll2 {
-		float: left;
-	}
-	</style>
+    <title> 仿QQ空间相册 </title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #main{
+        width:1000px;
+        margin:auto;
+        }
+        #smallpic{
+        height:120px; 
+        }
+        img{
+        float:left; 
+        margin-right:10px; 
+        margin-bottom:10px;
+        }
+        #smallpic img:hover{
+            cursor:pointer; /*设定鼠标的形状为小手*/
+        }
+        .pb{
+         border:3px solid #14c3fd;
+        } 
+    </style>
+    <script type="text/javascript">
+        var images =document.getElementsByTagName("img");
+        function showbig(which){
+             for(var i=0;i<6;i++)
+             {
+                images[i].style.border="0px";
+             }
+             document.getElementById(which).style.border="3px solid yellow";
+             var b=document.getElementById(which).src;
+             document.getElementById("bigpic").src=b;    
+        }
+    </script>
 </head>
-<body>
-	<div id="picScroll">
-		<span id="picScroll1">
-			<img src="images/1.jpg" />
-			<img src="images/2.jpg" />
-			<img src="images/3.jpg" />
-			<img src="images/4.jpg" />
-			<img src="images/5.jpg" />
-			<img src="images/6.jpg" />
-			<img src="images/7.jpg" />
-			<img src="images/8.jpg" />
-		</span>
-		<span id="picScroll2"></span>
-	</div>
-	<script type="text/javascript">
-		var hug=document.getElementById("picScroll");
-		var hug1=document.getElementById("picScroll1");
-		var hug2=document.getElementById("picScroll2");
-		hug2.innerHTML=hug1.innerHTML;
-		function changeToLeft(){
-			if(hug.scrollLeft>hug1.offsetWidth){
-				hug.scrollLeft=0;
-			}
-			else{
-				hug.scrollLeft++;
-			}
-		}
-		var MyMar=setInterval(changeToLeft,10);
-		hug.onmouseout=function() {
-			MyMar=setInterval(changeToLeft,10)
-		}
-		hug.onmouseover=function() {
-			clearInterval(MyMar)
-		}
-	</script>
 
+<body>
+    <div id="main">
+        <div id="smallpic">
+            <img src="images/s2.jpg" width="180" height="100" id="images1" onclick="showbig('images1');" />
+            <img src="images/s3.jpg" width="180" height="100" id="images2" onclick="showbig('images2');"/>
+            <img src="images/s4.jpg" width="180" height="100" id="images3" onclick="showbig('images3');"/>
+            <img src="images/s5.jpg" width="180" height="100" id="images4" onclick="showbig('images4');"/>
+            <img src="images/s6.jpg" width="180" height="100" id="images5" onclick="showbig('images5');"/>
+        </div>
+        <div >
+            <img id="bigpic" src="images/s1.jpg" width="940px" />
+        </div>
+    </div>
 </body>
 </html>
-
