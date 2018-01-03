@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+		td{
+			border: 1px solid red;
+		}
+		html{
+			background-image: url(kclx/bg8.jpg);
+		}
+	</style>
+</head>
+<body>
+<h2>用户注册</h2>
+<table>
+	<tr>
+		<td>用户名：</td>
+		<td><input type="text" name="username"></td>
+	</tr>
+	<tr>
+		<td>密码：</td>
+		<td><input type="password" name="pswd"></td>
+	</tr>
+	<tr>
+		<td>确认密码：</td>
+		<td><input type="password" name="pswd"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><button onclick="submit()">注册<button></td>
+	</tr>
+</table>
+</body>
+<html>
+<script type="text/javascript">
+	function submit() {
+		var userName = $('input[name="username"]').val();
+		var pswd1 = $('input[name="pswd"]')[0].value;
+		var pswd2 = $('input[name="pswd"]')[1].value;
+	    if (!userName){
+	        alert('用户名不能为空');
+	        return;
+	    }
+	    if(!pswd1 || !pswd2) {
+	        alert('密码为空');
+	        return;
+	    }
+	    if (pswd1 !== pswd2) {
+	        alert('两次密码输入不一样,请重新输入');
+	        return;
+	    }
+	 	alert('成功');
+	    }
+</script>

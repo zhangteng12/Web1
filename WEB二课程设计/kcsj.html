@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>课程设计</title>
+	<meta charset="utf-8">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+		html{
+			background-image: url(kclx/bg8.jpg);
+		}
+		#nav{
+			width: 1000px;
+			background-color: #7AC5CD;
+			list-style:none;
+		}
+		#nav a:link,#nav a:visited{
+			display:block;
+			width: 125px;
+			color: 	#EE2C2C ;
+			text-align:center;
+			text-decoration:none;
+		}
+		#nav a:hover{
+			color: #FFFF00;
+			text-decoration: underline;
+			background-color:#515151;
+		}
+		#nav ul{
+			list-style: none;
+		}
+		#nav li{
+			float:left;
+			width: 125px;
+		}
+		#nav li ul li a:hover{
+			background:#C00;
+		}
+		#nav li ul{
+			display:none;
+		}
+		#nav li.subMenuShow ul{
+			display:block;
+		}
+		#top{
+			width: 100%;
+			float: left;
+			opacity: 1.0;
+		}
+		#left{
+			width: 100%;
+			height: 300px;
+			float: left;
+			margin-top: 80px;
+		}
+		body{
+			text-align:center;
+		}
+		#change{
+			width:200px;
+			height:250px;
+			margin-left:5px;
+		}
+		#picScroll{
+			margin:0 auto;
+			height:250px;
+			border:1px solid #C90;
+			white-space:nowrap; 
+			width:80%;
+			overflow:hidden;
+		}
+		#down1{
+			margin-top: 100px;
+			float: left;
+			height: 500px;
+			width: 35%;
+			margin-right: 15px;
+		}
+		#down2{
+			margin-top: 120px;
+			float: left;
+			height: 1300px;
+			width: 60%;
+		}
+		#down1 img{
+			width: 450px;
+			height: 250px;
+			opacity: 1.0;
+		}
+		#down1 img:hover{
+			opacity: 0.5;
+			cursor: pointer;
+		}
+		#biga{
+			width: 600px;
+			height:1200px;
+		}
+</style>
+</head>
+<body>
+<div id="top">
+	<ul id="nav">
+		<li><img src="kclx/logo.jpg"></li>
+		<li><a href="kcsj.html">首页</a></li>
+		<li><a  href="#">关于我们</a>
+			<ul >
+				<li><a href="#">设计团队</a></li>
+				<li><a href="#">美工团队</a></li>
+				<li><a href="#">开发团队</a></li>
+			</ul>
+		</li>
+		<li><a href="#">产品介绍</a>
+			<ul>
+				<li><a href="#">图片来源</a></li>
+				<li><a href="#">图片下载</a></li>
+				<li><a href="#">相关缴费</a></li>
+			</ul>
+		</li>
+		<li><a href="#">技术支持</a>
+			<ul>
+				<li><a href="#">外聘人员</a></li>
+				<li><a href="#">公司培训</a></li>
+				<li><a href="#">测试团队</a></li>
+			</ul>
+		</li>
+		<li><a href="#">客户服务</a>
+			<ul>
+				<li><a href="#">一键会员</a></li>
+				<li><a href="#">海量图片</a></li>
+				<li><a href="#">免费下载</a></li>
+			</ul>
+		</li>
+		<li><a href="#">联系我们</a>
+			<ul>
+				<li><a href="#">官方电话</a></li>
+				<li><a href="#">邮箱地址</a></li>
+				<li><a href="#">官方微信公众号</a></li>
+			</ul>
+		</li>
+		<li><a href="submit.html"><input type="button" value="注册" id="submit"></a></li>
+</ul>
+</div>
+<div id="left">
+	<div id="picScroll">
+		<span id="picScroll1">
+			<img src="kclx/img1.jpg" id="change">
+			<img src="kclx/img2.jpg" id="change">
+			<img src="kclx/img3.jpg" id="change">
+			<img src="kclx/img4.jpg" id="change">
+			<img src="kclx/img5.jpg" id="change">
+			<img src="kclx/img6.jpg" id="change">
+			<img src="kclx/img7.jpg" id="change">
+			<img src="kclx/男头1.jpg" id="change">
+			<img src="kclx/女头1.jpg" id="change">
+			<img src="kclx/它们2.jpg" id="change">
+			<img src="kclx/焰火.jpg" id="change">
+			<img src="kclx/拥抱.jpg" id="change">
+		</span>
+		<span id="picScroll2"></span>
+	</div> 
+</div>
+<div id="down1">
+	<img src="kclx/mj1.jpg" id="images1" onclick="showbig('images1');"/><br/>
+	<img src="kclx/mj2.jpg" id="images2" onclick="showbig('images2');"/><br/>
+	<img src="kclx/mj3.jpg" id="images3" onclick="showbig('images3');"/><br/>
+	<img src="kclx/mj4.jpg" id="images4" onclick="showbig('images4');"/><br/>
+	<img src="kclx/mj5.jpg" id="images5" onclick="showbig('images5');"/>
+</div>
+<div id="down2">
+	<img src="kclx/big.jpg" id="biga">
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		var liNodes = document.getElementsByTagName("li");
+		for (var i=0; i<liNodes.length; i++)
+		{
+			liNodes[i].onmouseover = function(){
+				this.className = "subMenuShow";
+			}
+			liNodes[i].onmouseout = function(){
+				this.className = "";
+			}
+		}
+		
+		var speed = 10;
+		picScroll = document.getElementById("picScroll");
+		picScroll1 = document.getElementById("picScroll1");
+		picscroll2 = document.getElementById("picScroll2");
+
+		picscroll2.innerHTML = picScroll1.innerHTML;
+
+		var ID=setInterval(changeToLeft,speed);
+
+		picScroll.onmouseover=function() {
+			clearInterval(ID);
+		}
+		picScroll.onmouseout=function() {
+			ID=setInterval(changeToLeft,speed);
+		}
+	};
+
+	function changeToLeft(){
+	
+		if(picScroll.scrollLeft >= (picScroll1.offsetWidth)){
+			picScroll.scrollLeft = 0;
+		}
+		else{
+			picScroll.scrollLeft += 1;
+		}
+	}
+
+	var images=document.getElementsByTagName("img")
+	function showbig(which){
+        for(var i=0;i<6;i++)
+        {
+            images[i].style.border="0px";
+       	}
+        document.getElementById(which).style.border="3px solid yellow";
+        var b=document.getElementById(which).src;
+        document.getElementById("biga").src=b;    
+    }
+</script>
